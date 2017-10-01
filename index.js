@@ -5,9 +5,10 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://DanielC.:qweqweqwelfybr92@ds147454.mlab.com:47454/neightbor";
 
 
+app.set('port', (process.env.PORT || 5000));
 
 
-app.listen(3000, function () {
+app.listen(app.get('port') , function () {
   console.log('Example app listening on port 3000!')
   MongoClient.connect(url, function(err, db) {
   if (err) throw err;
