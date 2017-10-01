@@ -20,7 +20,7 @@ app.listen(app.get('port') , function () {
 app.get("/test" , function(){
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  var myobj = { name: "Company Inc", address: "Highway 37" };
+  var myobj = { name: "Company Inc", address: "Highway" };
   db.collection("Test").insertOne(myobj, function(err, res) {
     if (err) throw err;
     console.log("1 document inserted");
